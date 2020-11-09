@@ -1,0 +1,27 @@
+body {
+    font-size: .875rem;
+}
+
+#data-area th a {
+    position: relative;
+}
+#data-area th a.asc::before {
+    content: "\2193";
+    position: absolute;
+    right: -10px;
+    color: #000;
+    top: 0;
+}
+#data-area th a.desc::before {
+    content: "\2191";
+    position: absolute;
+    right: -10px;
+    color: #000;
+    top: 0;
+}
+span.page-link:not(:disabled):not(.disabled) {
+    cursor: default;
+}
+fieldset {
+    padding-bottom: 1em;
+}
