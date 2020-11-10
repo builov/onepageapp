@@ -47,7 +47,7 @@ class Model
 
         $query = 'SELECT * FROM table1 WHERE TRUE';
 
-        if ($filter && array_key_exists($filter_by_field, $this->fields) && array_key_exists($operator, $this->operators))
+        if ($filter != NULL && array_key_exists($filter_by_field, $this->fields) && array_key_exists($operator, $this->operators))
         {
             $query .= ' AND ' . $filter_by_field . ' ' . $this->operators[$operator] . ' :filter';
             $bind_values[] = array($filter, $operator);
@@ -76,6 +76,8 @@ class Model
 
         $query .= ' LIMIT :limit';
         $query .= ' OFFSET :offset';
+
+//        echo $query;
 
         $stmt = $this->pdo->prepare($query);
 
