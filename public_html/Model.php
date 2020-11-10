@@ -38,6 +38,7 @@ class Model
 
     private function isValidStr($str)
     {
+        //тут можно сделать еще какие-нибудь проверки строки фильтра для разных условий
         return true;
     }
 
