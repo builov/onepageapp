@@ -1,10 +1,10 @@
 <?php
 
+$out['data'] = [];
+$out['pager'] = [];
+
 if ($this->model->entries > 0)
 {
-
-    $out['data'] = [];
-
     foreach ($this->data as $row) {
         $out['data'][] = array($row['date'], $row['title'], $row['quantity'], $row['dist']);
     }
@@ -13,8 +13,6 @@ if ($this->model->entries > 0)
     $out['pager']['active'] = $this->model->pager_page;
 }
 else {
-    $out['data'] = [];
-    $out['pager'] = [];
     $out['message'] = 'Ничего не найдено.';
 }
 print json_encode($out);
