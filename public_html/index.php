@@ -20,11 +20,11 @@ if ($data = $model->getFiltered($pager_page, $sort, $sort_by_field, $filter, $fi
     {
         $out = new View('templates/json.php', $data, $model);
         print $out->render();
-        return;
+        exit;
     }
     $page = new View('templates/page.php', $data, $model);
     print $page->render();
-    return;
+    exit;
 }
 $page = new View('templates/error.php','Ошибка сервера.', $model);
 print $page->render();
